@@ -107,6 +107,11 @@ namespace KoenZomers.UniFi.Api.UnitTest
         public void GetClientHistoryTestMethod()
         {
             if (!uniFiApi.IsAuthenticated) AuthenticateTestMethod();
+            if (uniFiApi.IsUniFiOS)
+            {
+                Assert.Inconclusive("Not yet able to validate this method on UniFiOS");
+                return;
+            }
 
             // First retrieve all clients
             var task1 = uniFiApi.GetAllClients();
@@ -133,6 +138,11 @@ namespace KoenZomers.UniFi.Api.UnitTest
         public void BlockUnblockClientTestMethod()
         {
             if (!uniFiApi.IsAuthenticated) AuthenticateTestMethod();
+            if (uniFiApi.IsUniFiOS)
+            {
+                Assert.Inconclusive("Not yet able to validate this method on UniFiOS");
+                return;
+            }
 
             // First retrieve all clients
             var task1 = uniFiApi.GetAllClients();
@@ -190,6 +200,11 @@ namespace KoenZomers.UniFi.Api.UnitTest
         public void RenameClientTestMethod()
         {
             if (!uniFiApi.IsAuthenticated) AuthenticateTestMethod();
+            if (uniFiApi.IsUniFiOS)
+            {
+                Assert.Inconclusive("Not yet able to validate this method on UniFiOS");
+                return;
+            }
 
             // First retrieve all clients
             var task1 = uniFiApi.GetAllClients();
@@ -243,7 +258,12 @@ namespace KoenZomers.UniFi.Api.UnitTest
         public void AuthorizeUnAuthorizeGuestTestMethod()
         {
             if (!uniFiApi.IsAuthenticated) AuthenticateTestMethod();
-
+            if (uniFiApi.IsUniFiOS)
+            {
+                Assert.Inconclusive("Not yet able to validate this method on UniFiOS");
+                return;
+            }
+            
             // First retrieve all active clients
             var task1 = uniFiApi.GetActiveClients();
             task1.Wait();

@@ -34,6 +34,11 @@
             Boolean indicating whether this Api session is authenticated
             </summary>
         </member>
+        <member name="P:KoenZomers.UniFi.Api.Api.IsUniFiOS">
+            <summary>
+            Boolean indicating if the controller is runnong on UniFi OS.
+            </summary>
+        </member>
         <member name="M:KoenZomers.UniFi.Api.Api.#ctor(System.Uri)">
             <summary>
             Instantiates a new instance of the UniFi API Controller class against the default UniFi site
@@ -152,6 +157,19 @@
             Logs out from the UniFi Controller
             </summary>
             <returns>True if logout was successful or False if it failed</returns>
+        </member>
+        <member name="M:KoenZomers.UniFi.Api.Api.DetectUniFiOS">
+            <summary>
+            Determine if the UniFi Controller is running on UniFi OS.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KoenZomers.UniFi.Api.Api.MapUrl(System.String)">
+            <summary>
+            Map URLs as necessary into UniFi OS controller URLs.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
         </member>
         <member name="T:KoenZomers.UniFi.Api.CookieUtility">
             <summary>
